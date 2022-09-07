@@ -31,6 +31,9 @@ gem "rake", "~> 13.0"
 # Require all files in a folder
 gem "require_all", "~> 3.0"
 
+#install uri
+gem 'uri'
+
 #my Faker data
 gem "faker"
 
