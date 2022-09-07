@@ -149,4 +149,24 @@ class ApplicationController < Sinatra::Base
     send_stats.to_json
   end
 
+  #DELETE endpoints
+
+  delete '/teams/:id' do
+    yeeted = Team.find(params[:id])
+    yeeted.destroy
+    yeeted.to_json
+  end
+
+  delete '/stats/:id' do
+    yeeted = PlayerStat.find(params[:id])
+    yeeted.destroy
+    yeeted.to_json
+  end
+
+  delete '/players/:id' do
+    yeeted = Player.find(params[:id])
+    yeeted.destroy
+    yeeted.to_json
+  end
+
 end
