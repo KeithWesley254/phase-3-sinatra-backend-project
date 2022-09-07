@@ -14,7 +14,7 @@ end
         name: Faker::Esport.team,
         team_owner: Faker::Name.name,
         founded: Faker::Date.between(from: '2014-09-23', to: '2020-09-25'),
-        description: Faker::Lorem.paragraphs,
+        description: Faker::Food.description,
         league: Faker::Esport.league,
         game_id: rand(1..50)
     )
