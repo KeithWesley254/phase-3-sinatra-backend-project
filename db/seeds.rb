@@ -5,7 +5,7 @@ puts "🌱 Seeding greatness..."
         title: Faker::Game.title,
         genre: Faker::Game.genre,
         platform: Faker::Game.platform,
-        description: Faker::Lorem.paragraphs
+        description: Faker::Food.description
     )
 end
 
