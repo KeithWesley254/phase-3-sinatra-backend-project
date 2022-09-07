@@ -3,7 +3,9 @@ class ApplicationController < Sinatra::Base
   
   # GET endpoints
   get "/" do
-    { message: "Good luck with your project!" }.to_json
+    %{
+      Kenyan Esports League Database
+    }
   end
 
   get "/games" do
