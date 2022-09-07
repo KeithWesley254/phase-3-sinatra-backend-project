@@ -25,8 +25,7 @@ gem "sinatra-activerecord"
 #rake console n commands
 gem "rake"
 
-#sqlite3 for this database
-
+gem 'psych', '~> 4.0.0'
 
 #Require all files in a folder
 gem "require_all"
