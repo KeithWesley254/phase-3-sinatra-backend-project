@@ -5,8 +5,8 @@ class CreateTeams < ActiveRecord::Migration[6.1]
       t.string :team_owner
       t.string :founded
       t.string :description
-      t.string :league
-      t.integer :game_id
+      t.belongs_to :game
+      t.belongs_to :kenya_esport_league
       t.timestamps
     end
   end
