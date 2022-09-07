@@ -21,15 +21,6 @@ ActiveRecord::Schema.define(version: 2022_09_07_164437) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table "kenya_esport_leagues", force: :cascade do |t|
-    t.string "league_name"
-    t.integer "played"
-    t.integer "won"
-    t.integer "lost"
-    t.integer "drawn"
-    t.integer "points"
-  end
-
   create_table "player_stats", force: :cascade do |t|
     t.integer "number_of_games"
     t.integer "game_duration"
@@ -64,12 +55,11 @@ ActiveRecord::Schema.define(version: 2022_09_07_164437) do
     t.string "team_owner"
     t.string "founded"
     t.string "description"
+    t.string "league"
     t.integer "game_id"
-    t.integer "kenya_esport_league_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["game_id"], name: "index_teams_on_game_id"
-    t.index ["kenya_esport_league_id"], name: "index_teams_on_kenya_esport_league_id"
   end
 
 end

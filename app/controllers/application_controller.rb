@@ -33,14 +33,6 @@ class ApplicationController < Sinatra::Base
     specific_game.to_json(only: [:id, :title, :genre, :platform, :description], include: {players: {only: [:id, :name, :role_played, :age, :image_url, :slogan]}})
   end
 
-  get "/kenya_esport_league_table" do
-    the_league = KenyaEsportLeague.all
-    the_league.to_json(only: [:id, :league_name, :played, :won, :lost, :drawn, :points], 
-      include: {teams: {only: [:id, :name, :team_owner, :founded, :description], 
-        include: {players: {only: [:id, :name, :age, :slogan, :role_played, :image_url]}}}}
-    )
-  end
-
   get "/roles" do
     all_roles = Role.all
     all_roles.to_json(only: [:id, :role_name, :image_url, :description])
@@ -126,18 +118,6 @@ class ApplicationController < Sinatra::Base
     post_player.to_json
   end
 
-  post "/kenya_esport_league_table" do
-    post_team = KenyaEsportLeague.create(
-      league_name: params[:league_name],
-      played: params[:played],
-      won: params[:won],
-      lost: params[:lost],
-      drawn: params[:drawn],
-      points: params[:points]
-    )
-    post_team.to_json
-  end
-
   post "/stats" do
     send_stats = PlayerStat.create(
       number_of_games: params[:number_of_games],
@@ -167,6 +147,46 @@ class ApplicationController < Sinatra::Base
     yeeted = Player.find(params[:id])
     yeeted.destroy
     yeeted.to_json
+  end
+
+  #PUT endpoints
+  put "/teams/:id" do
+    fix_it = Team.find(params[:id])
+    fix_it.update(
+      name: params[:name],
+      team_owner: params[:team_owner],
+      founded: params[:founded],
+      description: params[:description],
+      game_id: params[:game_id],
+      kenya_esport_league_id: params[:kenya_esport_league_id]
+    )
+    fix_it.to_json
+  end
+
+  put "/players/:id" do
+    fix_it = Player.find(params[:id])
+    fix_it.update(
+      name: params[:name],
+      age: params[:age],
+      slogan: params[:slogan],
+      role_played: params[:role_played],
+      image_url: params[:image_url],
+      team_id: params[:team_id]
+    )
+    fix_it.to_json
+  end
+
+  put "/teams/:id" do
+    fix_it = Team.find(params[:id])
+    fix_it.update(
+      name: params[:name],
+      team_owner: params[:team_owner],
+      founded: params[:founded],
+      description: params[:description],
+      game_id: params[:game_id],
+      kenya_esport_league_id: params[:kenya_esport_league_id]
+    )
+    fix_it.to_json
   end
 
 end

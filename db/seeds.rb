@@ -1,6 +1,6 @@
 puts "🌱 Seeding greatness..."
 
-20.times do
+50.times do
     seeded_games = Game.create(
         title: Faker::Game.title,
         genre: Faker::Game.genre,
@@ -9,26 +9,18 @@ puts "🌱 Seeding greatness..."
     )
 end
 
-30.times do
+100.times do
     seeded_teams = Team.create(
         name: Faker::Esport.team,
         team_owner: Faker::Name.name_with_middle,
         founded: Faker::Date.between(from: '2014-09-23', to: '2020-09-25'),
         description: Faker::Lorem.paragraphs,
-        game_id: rand(1..20),
-        kenya_esport_league_id: 1
-    )
-    seeded_league = KenyaEsportLeague.create(
-        league_name: Faker::Esport.league,
-        played: rand(9..10),
-        won: rand(0..10),
-        lost: rand(0..10),
-        drawn: rand(0..10),
-        points: rand(0..30)
+        league: Faker::Esport.league,
+        game_id: rand(1..50)
     )
 end
 
-300.times do
+2000.times do
     seeded_players = Player.create(
         name: Faker::Esport.player,
         age: rand(13..19),
