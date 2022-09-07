@@ -12,7 +12,7 @@ end
 100.times do
     seeded_teams = Team.create(
         name: Faker::Esport.team,
-        team_owner: Faker::Name.name_with_middle,
+        team_owner: Faker::Name.name,
         founded: Faker::Date.between(from: '2014-09-23', to: '2020-09-25'),
         description: Faker::Lorem.paragraphs,
         league: Faker::Esport.league,
