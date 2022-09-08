@@ -32,7 +32,7 @@ gem "require_all"
 
 gem 'uri'
 
- gem "faker"
+gem "faker"
 
 #use pry in the development phase only
 group :development do

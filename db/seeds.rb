@@ -33,7 +33,7 @@ end
         number_of_games: rand(20..50),
         game_duration: rand(30..60),
         average_kills_per_game: rand(10..40),
-        favourite_role: ["Tank", "Dps", "Support", "Flank"].sample,
+        favourite_role: seeded_players.role_played,
         player_id: seeded_players.id
     )
 end
