@@ -99,7 +99,6 @@ class ApplicationController < Sinatra::Base
       founded: params[:founded],
       description: params[:description],
       game_id: params[:game_id],
-      kenya_esport_league_id: params[:kenya_esport_league_id]
     )
     post_team.to_json
   end
