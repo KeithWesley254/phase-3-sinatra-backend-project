@@ -52,7 +52,7 @@ class ApplicationController < Sinatra::Base
 
   get "/players/:id" do
     all_players = Player.find(params[:id])
-    all_players.to_json(only: [:id, :name, :age, :slogan, :role_played, :image_url])
+    all_players.to_json(only: [:id, :name, :age, :slogan, :role_played, :image_url, :team_id])
   end
 
   get "/players/:id/stats" do
@@ -187,6 +187,19 @@ class ApplicationController < Sinatra::Base
       description: params[:description],
       game_id: params[:game_id],
       kenya_esport_league_id: params[:kenya_esport_league_id]
+    )
+    fix_it.to_json
+  end
+
+  #PATCH endpoints
+
+  patch "/players/:id" do
+    fix_it = Player.find(params[:id])
+    fix_it.update(
+      name: params[:name],
+      age: params[:age],
+      role_played: params[:role_played],
+      team_id: params[:team_id]
     )
     fix_it.to_json
   end
