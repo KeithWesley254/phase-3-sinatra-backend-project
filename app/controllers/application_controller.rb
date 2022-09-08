@@ -159,8 +159,7 @@ class ApplicationController < Sinatra::Base
       team_owner: params[:team_owner],
       founded: params[:founded],
       description: params[:description],
-      game_id: params[:game_id],
-      kenya_esport_league_id: params[:kenya_esport_league_id]
+      game_id: params[:game_id]
     )
     fix_it.to_json
   end
@@ -178,19 +177,6 @@ class ApplicationController < Sinatra::Base
     fix_it.to_json
   end
 
-  put "/teams/:id" do
-    fix_it = Team.find(params[:id])
-    fix_it.update(
-      name: params[:name],
-      team_owner: params[:team_owner],
-      founded: params[:founded],
-      description: params[:description],
-      game_id: params[:game_id],
-      kenya_esport_league_id: params[:kenya_esport_league_id]
-    )
-    fix_it.to_json
-  end
-
   #PATCH endpoints
 
   patch "/players/:id" do
@@ -200,6 +186,17 @@ class ApplicationController < Sinatra::Base
       age: params[:age],
       role_played: params[:role_played],
       team_id: params[:team_id]
+    )
+    fix_it.to_json
+  end
+
+  put "/teams/:id" do
+    fix_it = Team.find(params[:id])
+    fix_it.update(
+      name: params[:name],
+      team_owner: params[:team_owner],
+      description: params[:description],
+      game_id: params[:game_id]
     )
     fix_it.to_json
   end
