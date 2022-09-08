@@ -104,7 +104,7 @@ class ApplicationController < Sinatra::Base
   end
 
   post "/players" do
-    post_player = Team.create(
+    post_player = Player.create(
       name: params[:name],
       age: params[:age],
       slogan: params[:slogan],
