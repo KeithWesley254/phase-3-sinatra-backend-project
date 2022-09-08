@@ -69,7 +69,7 @@ class ApplicationController < Sinatra::Base
 
   get "/teams/:id" do
     specific_team = Team.find(params[:id])
-    specific_team.to_json(only: [:id, :name, :team_owner, :founded, :description])
+    specific_team.to_json(only: [:id, :name, :team_owner, :founded, :description, :game_id])
   end
 
   get "/teams/players" do
@@ -186,7 +186,7 @@ class ApplicationController < Sinatra::Base
     fix_it.to_json
   end
 
-  put "/teams/:id" do
+  patch "/teams/:id" do
     fix_it = Team.find(params[:id])
     fix_it.update(
       name: params[:name],
