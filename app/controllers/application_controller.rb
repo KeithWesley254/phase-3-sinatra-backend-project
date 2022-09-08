@@ -52,12 +52,8 @@ class ApplicationController < Sinatra::Base
 
   get "/players/:id" do
     all_players = Player.find(params[:id])
-    all_players.to_json(only: [:id, :name, :age, :slogan, :role_played, :image_url, :team_id])
-  end
-
-  get "/players/:id/stats" do
-    all_players = Player.find(params[:id])
-    all_players.to_json(only: [:id, :name, :age], include: {player_stats: {only: [:id, :number_of_games, :game_duration, :average_kills_per_game, :favourite_role]}})
+    all_players.to_json(only: [:id, :name, :age, :slogan, :role_played, :image_url, :team_id], 
+      include: {player_stats: {only: [:id, :number_of_games, :game_duration, :average_kills_per_game, :favourite_role]}})
   end
 
   get "/players/stats" do
