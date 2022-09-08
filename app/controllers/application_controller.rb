@@ -68,7 +68,7 @@ class ApplicationController < Sinatra::Base
   end
 
   get "/teams/:id" do
-    specific_team = Team.all
+    specific_team = Team.find(params[:id])
     specific_team.to_json(only: [:id, :name, :team_owner, :founded, :description])
   end
 
