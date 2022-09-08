@@ -64,7 +64,7 @@ class ApplicationController < Sinatra::Base
 
   get "/teams" do
     all_teams = Team.all
-    all_teams.to_json(only: [:id, :name, :team_owner, :founded, :description])
+    all_teams.to_json(only: [:id, :name, :team_owner, :founded, :description, :game_id])
   end
 
   get "/teams/:id" do
