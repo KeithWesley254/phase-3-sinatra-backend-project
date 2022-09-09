@@ -8,7 +8,7 @@ KEITH WESLEY
 This is the TXC Clan Esports database
 
 # Setup Instructions:
-    Kenyan Esports League Database
+    TXC Clan Esports Database
 
       Here is the complete list of endpoints:
 
