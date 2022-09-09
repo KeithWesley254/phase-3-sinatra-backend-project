@@ -1,13 +1,48 @@
 # Phase 3 Project Moringa School
 # Project Name:
+TXC Clan Esports
 
 # Author:
 KEITH WESLEY
 # Description:
+This is the TXC Clan Esports database
 
 # Setup Instructions:
+    Kenyan Esports League Database
+
+      Here is the complete list of endpoints:
+
+      GET Requests:
+      /games
+      /games/teams
+      /games/players
+      /games/:id
+      /games/:id/players
+      /roles
+      /roles/:id
+      /players
+      /players/:id
+      /games/:id/players
+      /players/stats
+      /stats
+      /stats/:id
+      
+      POST Requests
+      /games
+      /players
+      /teams
+
+      DELETE Requests
+      /stats/:id
+      /players/:id
+      /teams/:id
+
+      PATCH Requests
+      /players/:id
+      /teams/:id
 
 # Deployment Link:
+https://esports-api-wesley.herokuapp.com/
 
 # LICENSE:
 MIT License

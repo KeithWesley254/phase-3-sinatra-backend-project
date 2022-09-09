@@ -5,6 +5,36 @@ class ApplicationController < Sinatra::Base
   get "/" do
     %{
       Kenyan Esports League Database
+      Here is the complete list of endpoints:
+
+      GET Requests:
+      /games
+      /games/teams
+      /games/players
+      /games/:id
+      /games/:id/players
+      /roles
+      /roles/:id
+      /players
+      /players/:id
+      /games/:id/players
+      /players/stats
+      /stats
+      /stats/:id
+      
+      POST Requests
+      /games
+      /players
+      /teams
+
+      DELETE Requests
+      /stats/:id
+      /players/:id
+      /teams/:id
+
+      PATCH Requests
+      /players/:id
+      /teams/:id
     }
   end
 
