@@ -4,7 +4,7 @@ class ApplicationController < Sinatra::Base
   # GET endpoints
   get "/" do
     %{
-      Kenyan Esports League Database
+      TXC Clan Esports Database
       Here is the complete list of endpoints:
 
       GET Requests:
